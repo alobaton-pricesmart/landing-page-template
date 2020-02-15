@@ -1,0 +1,82 @@
+<div class="container">
+  <nb-card>
+    <nb-card-body class="p-0 m-0">
+      <div class="row p-0 m-0">
+        <div class="col-sm-12 col-md-6">
+          <div class="px-3 pt-4 pb-5">
+            <h1>{{ 'pages.home.contact.subTitle' | translate }}</h1>
+            <form class="form-horizontal" (ngSubmit)="send()" [formGroup]="form" *ngIf="isForm | async as isForm;">
+
+              <div class="form-group row">
+                <input nbInput fullWidth type="text" class="form-control" id="name"
+                  placeholder="{{ 'pages.home.contact.form.name' | translate }}" formControlName="name"
+                  [status]="getStatus(form, 'name')">
+                <app-input-error [controlName]="'name'" [errorKey]="['required']">
+                  {{ 'general.required' | translate: { field: 'pages.home.contact.form.name' | translate } }}
+                </app-input-error>
+              </div>
+
+              <div class="form-group row">
+                <input nbInput fullWidth type="text" class="form-control" id="email"
+                  placeholder="{{ 'pages.home.contact.form.email' | translate }}" formControlName="email"
+                  [status]="getStatus(form, 'email')">
+                <app-input-error [controlName]="'email'" [errorKey]="['required']">
+                  {{ 'general.required' | translate: { field: 'pages.home.contact.form.email' | translate } }}
+                </app-input-error>
+                <app-input-error [controlName]="'email'" [errorKey]="['email']">
+                  {{ 'general.invalid' | translate: { field: 'pages.home.contact.form.email' | translate } }}
+                </app-input-error>
+              </div>
+
+              <div class="form-group row">
+                <textarea nbInput fullWidth type="text" class="form-control" id="message"
+                  placeholder="{{ 'pages.home.contact.form.message' | translate }}" formControlName="message"
+                  [status]="getStatus(form, 'message')"></textarea>
+                <app-input-error [controlName]="'message'" [errorKey]="['required']">
+                  {{ 'general.required' | translate: { field: 'pages.home.contact.form.message' | translate } }}
+                </app-input-error>
+              </div>
+
+              <div class="float-left row">
+                <button nbButton type="submit" [disabled]="form.invalid">
+                  {{ 'general.send' | translate: { field: 'pages.home.contact.form.message' | translate } }}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 p-0 m-0">
+          <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+
+  <div class="row pt-4 pb-5">
+    <div class="col-sm-12 col-md-6">
+      <div class="w-100">
+        <h2 class="d-flex justify-content-center">
+          {{ 'pages.home.contact.title' | translate }}
+        </h2>
+        <div class="d-flex justify-content-center" *ngFor="let cardItem of cardItems">
+          <nb-icon icon="{{ cardItem.icon }}"></nb-icon>
+          {{ cardItem.title | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div class="w-100">
+        <h2 class="d-flex justify-content-center">
+          {{ 'pages.home.contact.social.title' | translate }}
+        </h2>
+        <div class="d-flex justify-content-center" *ngFor="let socialItem of socialItems">
+          <nb-icon icon="{{ socialItem.icon }}"></nb-icon>
+          {{ socialItem.title | translate }}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

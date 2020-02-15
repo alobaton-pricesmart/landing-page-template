@@ -1,0 +1,17 @@
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide *ngFor="let image of images">
+    <div class="picsum-img-wrapper">
+      <img *ngIf="image.src" [src]="image.src" alt="image.alt">
+    </div>
+    <div class="carousel-caption">
+      <h3>{{ image.label | translate }}</h3>
+      <p>{{ image.description | translate }}</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">{{ 'title' | translate }}</h1>
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </div>
+</div>

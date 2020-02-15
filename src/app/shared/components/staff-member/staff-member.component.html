@@ -1,0 +1,31 @@
+<nb-reveal-card>
+  <nb-card-front>
+    <nb-card>
+      <nb-card-body>
+        <div class="text-center">
+          <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+            aria-label="Placeholder: 140x140">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777"
+              dy=".3em">140x140</text>
+          </svg>
+          <h2>{{ staffMember.name }}</h2>
+          <p>{{ staffMember.description }}</p>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </nb-card-front>
+  <nb-card-back class="h-100">
+    <nb-card class="h-100">
+      <nb-card-body>
+        <div>
+          <div class="d-flex justify-content-center" *ngFor="let socialItem of staffMember.socialItems">
+            <nb-icon icon="{{ socialItem.icon }}"></nb-icon>
+            {{ socialItem.title | translate }}
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </nb-card-back>
+</nb-reveal-card>

@@ -1,0 +1,58 @@
+{
+  "title":"app-name",
+  "general":{
+    "general":"General",
+    "accept":"Accept",
+    "create":"Create",
+    "close":"Close",
+    "save":"Save",
+    "update":"Update",
+    "cancel":"Cancel",
+    "edit":"Edit",
+    "delete":"Delete",
+    "actions":"Actions",
+    "send":"Send",
+    "required":"The field {{field}} is required",
+    "clean":"Clean",
+    "search":"Search",
+    "add":"Add",
+    "status":"Status",
+    "observations":"Observations",
+    "back":"Back",
+    "next":"Next",
+    "si":"Yes",
+    "no":"No",
+    "invalid": "The field {{field}} is invalid"
+  },
+  "pages" : {
+    "home": {
+      "title": "Home",
+      "aboutUs": {
+        "title": "About us"
+      },
+      "staff": {
+        "title": "Staff"
+      },
+      "contact": {
+        "title": "Contact",
+        "subTitle": "Get in touch",
+        "form": {
+          "name": "Name",
+          "email": "E-Mail",
+          "message": "Message"
+        },
+        "card": {
+          "address": "Address",
+          "city": "City",
+          "phone": "Phone",
+          "celphone": "Celphone",
+          "email": "E-Mail"
+        },
+        "social": {
+          "title": "Follow us",
+          "facebook": "Facebook"
+        }
+      }
+    }
+  }
+}
